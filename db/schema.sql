@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS newsfeed_db;
+DROP DATABASE IF EXISTS gaming_blog;
 
-CREATE DATABASE newsfeed_db;
+CREATE DATABASE gaming_blog;

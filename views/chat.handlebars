@@ -1,6 +1,7 @@
 <h1 id='test'>Display Name: {{userObj.username}}</h1>
 
-<form id='chat-form'>
+<ul id='messages'>Chat Messages:</ul>
+<form id='chat-form' onsubmit='return sendMessage();'>
   <input
     id='chat-message'
     placeholder='Enter message'
@@ -8,8 +9,6 @@
   />
   <input type='submit' />
 </form>
-
-<ul id='messages'>Chat Messages:</ul>
 
 <script
   src='https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js'

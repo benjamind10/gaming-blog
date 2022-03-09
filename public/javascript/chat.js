@@ -19,9 +19,7 @@ const database = firebase.database();
 const chat_db = database.ref('/event/chat/');
 
 // Send message to db
-$('#chat-form').submit(function (event) {
-  event.preventDefault();
-
+function sendMessage() {
   let message = $('#chat-message').val();
 
   chat_db.push().set({
@@ -30,14 +28,55 @@ $('#chat-form').submit(function (event) {
     chatTextDB: message,
   });
   $('#chat-message').val('');
-});
+
+  return false;
+}
 
 // Listen for incoming messages
 
 chat_db.orderByChild('event').on('child_added', function (snapshot) {
-  let html = `<li>${snapshot.val().sender} : ${
-    snapshot.val().message
-  }</li>`;
+  let html = '';
+  html += "<li id='message-" + snapshot.key + "'>";
+  // Show delete button if message is sent by me
+  if (snapshot.val().sender == user_name) {
+    html +=
+      "<button data-id='" +
+      snapshot.key +
+      "' onclick='deleteMessage(this);'>";
+    html += 'Delete';
+    html += '</button>';
+  }
+
+  html += snapshot.val().sender + ': ' + snapshot.val().message;
+  html += '</li>';
 
   $('#messages').append(html);
 });
+
+function deleteMessage(self) {
+  // get message ID
+  var messageId = self.getAttribute('data-id');
+
+  // delete message
+  chat_db.child(messageId).remove();
+}
+
+// attach listener for delete message
+chat_db.on('child_removed', function (snapshot) {
+  // remove message node
+  document.getElementById('message-' + snapshot.key).innerHTML =
+    'This message has been removed';
+});
+
+// JQUERY REQUEST TO TRY COD API
+function requestAPI() {
+  var settings = {
+    url: 'https://www.callofduty.com/api/papi-client/leaderboards/v2/title/mw/platform/psn/time/alltime/type/core/mode/career/page/1',
+    method: 'GET',
+    timeout: 0,
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}

@@ -10,22 +10,34 @@ const firebaseConfig = {
   appId: '1:591427989407:web:e42f288f007b6bb1af57aa',
 };
 
-const user_name = $('#test').html();
-console.log(user_name);
+const raw_user = $('#test').html();
+const user_name = raw_user.split(' ')[2];
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-const chatDB = database.ref('/event/chat/');
+const chat_db = database.ref('/event/chat/');
 
+// Send message to db
 $('#chat-form').submit(function (event) {
   event.preventDefault();
 
   let message = $('#chat-message').val();
 
-  chatDB.push().set({
+  chat_db.push().set({
     sender: user_name,
     message: message,
+    chatTextDB: message,
   });
   $('#chat-message').val('');
+});
+
+// Listen for incoming messages
+
+chat_db.orderByChild('event').on('child_added', function (snapshot) {
+  let html = `<li>${snapshot.val().sender} : ${
+    snapshot.val().message
+  }</li>`;
+
+  $('#messages').append(html);
 });

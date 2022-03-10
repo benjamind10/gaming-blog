@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: '1:591427989407:web:e42f288f007b6bb1af57aa',
 };
 
-const raw_user = $('#test').html();
+const raw_user = $('#username').html();
 const user_name = raw_user.split(' ')[2];
 
 // Initialize Firebase

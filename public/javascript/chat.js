@@ -36,7 +36,7 @@ function sendMessage() {
 
 chat_db.orderByChild('event').on('child_added', function (snapshot) {
   let html = '';
-  html += "<li id='message-" + snapshot.key + "'>";
+  html += "<li id='message" + snapshot.key + "'>";
   // Show delete button if message is sent by me
   if (snapshot.val().sender == user_name) {
     html +=
@@ -64,7 +64,7 @@ function deleteMessage(self) {
 // attach listener for delete message
 chat_db.on('child_removed', function (snapshot) {
   // remove message node
-  document.getElementById('message-' + snapshot.key).innerHTML =
+  document.getElementById('message' + snapshot.key).innerHTML =
     'This message has been removed';
 });
 

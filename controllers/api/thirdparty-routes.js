@@ -3,8 +3,6 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
 const axios = require('axios');
-const fs = require('fs');
-var convert = require('xml-js');
 
 router.get('/', (req, res) => {
   try {
@@ -30,29 +28,13 @@ router.get('/events', (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  try {
-    const fetch = axios
-      .get('https://s.activision.com/activision/login')
-      .then(response => res.json(response.data));
-  } catch (error) {
-    console.log(error);
-    0;
-  }
-});
-
 router.get('/news', (req, res) => {
   try {
     const fetch = axios
-      .get('https://gamerant.com/feed/category/gaming/')
-      .then(response => {
-        const filtered = response.data.replace(/\n/g, '');
-        var result1 = convert.xml2json(filtered, {
-          compact: false,
-          spaces: 4,
-        });
-        res.json(result1);
-      });
+      .get(
+        `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10`
+      )
+      .then(response => res.json(response.data));
   } catch (error) {
     console.log(error);
   }

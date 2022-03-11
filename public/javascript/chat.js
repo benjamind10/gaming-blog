@@ -67,16 +67,3 @@ chat_db.on('child_removed', function (snapshot) {
   document.getElementById('message' + snapshot.key).innerHTML =
     'This message has been removed';
 });
-
-// JQUERY REQUEST TO TRY COD API
-function requestAPI() {
-  var settings = {
-    url: 'https://www.callofduty.com/api/papi-client/leaderboards/v2/title/mw/platform/psn/time/alltime/type/core/mode/career/page/1',
-    method: 'GET',
-    timeout: 0,
-  };
-
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-}

@@ -1,0 +1,22 @@
+<h1 id='username'>Display Name: {{userObj.username}}</h1>
+
+<ul id='messages'>Chat Messages:</ul>
+<form id='chat-form' onsubmit='return sendMessage();'>
+  <input
+    id='chat-message'
+    placeholder='Enter message'
+    autocomplete='off'
+  />
+  <input type='submit' />
+</form>
+
+<script
+  src='https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js'
+></script>
+<script
+  src='https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js'
+></script>
+<script
+  src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+></script>
+<script src='/javascript/chat.js'></script>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-html    {
+html    {a
     scroll-behavior: smooth;
 }
 
@@ -121,6 +121,18 @@ body {
     background-color: var(--info-box-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #eee;
+}
+
+/* FORUM PAGE Styles */
+.forum-div {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.forum-tab {
+    background-color: var(--info-box-color);
 }
 
 

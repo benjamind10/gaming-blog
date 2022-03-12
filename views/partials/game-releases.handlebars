@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;">
+  <img src="{{image.original}}" class="card-img-top" alt="{{name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+      {{#each genres as |genre|}}
+    <li class="list-group-item">{{name}}</li>
+    {{/each}}
+ 
+  </ul>
+  <div class="card-body">
+    <a href="{{reviews_api_url}}" class="card-link">reviews</a>
+    <a href="{{site_detail_url}}" class="card-link">details</a>
+  </div>
+</div>

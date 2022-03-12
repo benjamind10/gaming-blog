@@ -27,5 +27,11 @@
   </ol>
 </section>
 {{/if}}
-
+{{#if gamereleases.length}}
+<div>
+  {{#each gamereleases as |game|}}
+  {{> game-releases}}
+  {{/each}}
+</div>
+{{/if}}
 <script src="/javascript/add-post.js"></script>

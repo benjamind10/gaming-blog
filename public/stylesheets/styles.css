@@ -108,6 +108,21 @@ body {
     color: #eee;
 }
 
+/* USER DASHBOARD Styles */
+.user-info {
+    min-height: 150px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.user-posts {
+    min-height: 400px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
 
 /* Media Queries */
 

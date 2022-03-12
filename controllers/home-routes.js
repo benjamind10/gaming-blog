@@ -2,9 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment, Vote } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
+const { response } = require('express');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
+  const releases = [];
   console.log('======================');
   Post.findAll({
     attributes: [
@@ -39,19 +42,29 @@ router.get('/', (req, res) => {
         attributes: ['username'],
       },
     ],
-  })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+  }).then(dbPostData => {
+    const posts = dbPostData.map(post => post.get({ plain: true }));
 
-      res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn,
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    try {
+      const fetch = axios
+        .get(
+          `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10`
+        )
+        .then(response => {
+          releases.push(response.data);
+
+          // console.log('Response', response.data);
+          res.render('homepage', {
+            posts,
+            releases,
+            loggedIn: req.session.loggedIn,
+          });
+        });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json;
+    }
+  });
 });
 
 // get single post

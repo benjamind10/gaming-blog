@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-html    {a
+html    {
     scroll-behavior: smooth;
 }
 
@@ -129,6 +129,14 @@ body {
     background-color: var(--info-box-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #eee;
+}
+
+.dashboard-tab {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+    text-align: center;
 }
 
 .forum-tab {

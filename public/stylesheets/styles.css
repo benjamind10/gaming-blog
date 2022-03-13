@@ -24,6 +24,9 @@ body {
 .landingMain {
     max-width: 900px;
     margin: auto;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 2.5rem;
 }
 
 .header {
@@ -75,11 +78,78 @@ body {
 .landingFooter {
     height: 100px;
     max-width: 900px;
-    margin: auto;
     background-color: var(--info-box-color);
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: var(--info-text-color);
+    bottom: 0;
+}
+
+/* HOMEPAGE styling */
+
+.home-news {
+    min-height: 200px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.home-leaderboard {
+    min-height: 200px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.chatroom {
+    min-height: 100%;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+/* USER DASHBOARD Styles */
+.user-info {
+    min-height: 150px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.user-posts {
+    min-height: 400px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+/* FORUM PAGE Styles */
+.forum-div {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.dashboard-tab {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+    text-align: center;
+}
+
+.forum-tab {
+    background-color: var(--info-box-color);
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 575px)  {
+    .logoLanding img {
+        width: 75%;
+    }
 }
 
 

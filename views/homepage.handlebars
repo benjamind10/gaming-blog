@@ -1,6 +1,7 @@
 <ol class="post-list">
   {{#each releases.[0].results as |release|}}
   <li>
+    {{log release}}
     {{> game-releases release}}
   </li>
   {{/each}}

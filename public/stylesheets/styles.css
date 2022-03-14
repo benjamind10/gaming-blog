@@ -104,7 +104,11 @@ body {
     color: #eee;
     background-color: var(--info-box-color);
     max-height: 400px;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.news-card div::-webkit-scrollbar {
+    display: none;
 }
 
 .news-card li {
@@ -176,8 +180,3 @@ body {
         width: 75%;
     }
 }
-
-
-
-
-

@@ -104,7 +104,11 @@ body {
     color: #eee;
     background-color: var(--info-box-color);
     max-height: 400px;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.news-card div::-webkit-scrollbar {
+    display: none;
 }
 
 .news-card li {
@@ -160,6 +164,10 @@ body {
     text-align: center;
 }
 
+.tab-content {
+    width: 100%;
+}
+
 .forum-tab {
     background-color: var(--info-box-color);
 }
@@ -172,8 +180,3 @@ body {
         width: 75%;
     }
 }
-
-
-
-
-

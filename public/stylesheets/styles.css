@@ -160,6 +160,10 @@ body {
     text-align: center;
 }
 
+.tab-content {
+    width: 100%;
+}
+
 .forum-tab {
     background-color: var(--info-box-color);
 }

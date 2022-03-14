@@ -22,7 +22,7 @@ body {
 }
 
 .landingMain {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     position: relative;
     min-height: 100vh;
@@ -94,6 +94,23 @@ body {
     color: #eee;
 }
 
+.news-card img {
+    max-width: 50%;
+}
+
+.news-card div {
+    max-width: 200px;
+    font-size: 12px;
+    color: #eee;
+    background-color: var(--info-box-color);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.news-card li {
+    background-color: var(--info-box-color);
+}
+
 .home-leaderboard {
     min-height: 200px;
     background-color: var(--info-box-color);
@@ -106,6 +123,10 @@ body {
     background-color: var(--info-box-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #eee;
+}
+
+.chatbox {
+    background-color: #474545ce;
 }
 
 /* USER DASHBOARD Styles */

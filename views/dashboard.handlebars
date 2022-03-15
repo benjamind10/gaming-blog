@@ -1,7 +1,7 @@
 <!-- Stars section -->
         <section class="row justify-content-center">
             <div class="col-6 mt-5 p-3">
-                <img src="./images/fivestar.svg">
+                <img src="/images/fivestar.svg">
             </div>
         </section>
 <!-- User Dashboard -->
@@ -19,6 +19,7 @@
 <section>
   <!-- Section for forum (casual/competitive) -->
   <div class="row justify-content-center mt-2">
+    <div class="col-12">
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active bg-dark" id="user-posts-casual" data-bs-toggle="tab"
@@ -30,11 +31,13 @@
           type="button" role="tab" aria-controls="user-comp" aria-selected="false">Your Competitive Posts</button>
       </li>
     </ul>
+    </div>
+    
     <!--User Casual Post tab -->
     <div class="tab-content" id="myTabContent">
       <div class="row justify-content-center tab-pane fade show active dashboard-tab p-3" id="user-casual"
         role="tabpanel" aria-labelledby="user-casual">
-
+        <div class="col-12">
         <!--Form for creating new post-->
         <form class="new-post-form">
           <div class="mb-3">
@@ -47,9 +50,10 @@
           </div>
           <button type="submit" class="btn btn-secondary">Create Post</button>
         </form>
+        </div>
 
         <!-- Display created posts -->
-        <section>
+        <section class="col-12">
           <h2>Your Casual Posts</h2>
           <ol>
             {{#each casual-posts as |casual-post|}}
@@ -63,9 +67,10 @@
       </div>
 
       <!--User Competitive post tab-->
-      <div class="tab-pane fade dashboard-tab p-3" id="user-comp" role="tabpanel" aria-labelledby="user-comp">
+      <div class=" row justify-content-center tab-pane fade dashboard-tab p-3" id="user-comp" role="tabpanel" aria-labelledby="user-comp">
 
         <!-- Form for creating new post -->
+        <div class="col-12">
         <form class="new-post-form">
           <div class="mb-3">
             <label for="comp-post-title" class="form-label">Post Title</label>
@@ -77,9 +82,10 @@
           </div>
           <button type="submit" class="btn btn-secondary">Create Post</button>
         </form>
+        </div>
 
         <!-- Display created posts -->
-        <section>
+        <section class="col-12">
           <h2>Your Competitive Posts</h2>
           <ol>
             {{#each comp-posts as |comp-post|}}

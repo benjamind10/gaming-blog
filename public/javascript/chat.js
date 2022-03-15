@@ -23,6 +23,7 @@ function sendMessage() {
   let message = $('#chat-message').val();
 
   chat_db.push().set({
+    date: 'test',
     sender: user_name,
     message: message,
     chatTextDB: message,

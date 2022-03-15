@@ -1,4 +1,5 @@
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 
   <head>
     <meta charset='UTF-8' />
@@ -6,39 +7,44 @@
       name='viewport'
       content='width=device-width, initial-scale=1.0'
     />
-    <title>Just Tech News</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
+    <title>CoD Connect</title>
   </head>
 
-  <body>
-    <div class='wrapper'>
-      <header>
-        <h1>
-          <a href='/'>Just Tech News</a>
-        </h1>
-        <nav>
-          {{#if loggedIn}}
-            <a href='/dashboard'>dashboard</a>
-            <button id='logout' class='btn-no-style'>logout</button>
-          {{else}}
-            <a href='/login'>login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Thanks for visiting!
-      </footer>
-    </div>
+<body>
+    <div class="container landingMain justify-content-center">
+        <!--Header/logo section-->
+        <section class="row justify-content-center rounded-bottom header bg-dark bg-gradient mb-md-5">
+            <div class="col-8 col-md-4 logoLanding">
+                <img src="./images/logo2.png">
+                <button type="button" id="logout">Logout</button>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/forum">Forum</a>
+                </div>
+            </div>
+        </section>
 
-    {{#if loggedIn}}
-      <script
-        src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'
-      ></script>
-      <script src='/javascript/logout.js'></script>
-    {{/if}}
-  </body>
+        <main>
+            {{{body}}}
+        </main>
+        
+        
+    </div>
+    <footer class="row mt-4 justify-content-center">
+        <div class="landingFooter container">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/forum">Forum</a>
+            <a href="/login">Login/Logout</a>
+        </div>
+    </footer>
+    
+    <script src="/javascript/logout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
 
 </html>

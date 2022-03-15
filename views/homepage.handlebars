@@ -1,7 +1,26 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+<!-- Stars section -->
+<section class="row justify-content-center">
+  <div class="col-6 mt-5 p-3">
+    <img src="./images/fivestar.svg">
+  </div>
+</section>
+<!-- Homepage -->
+<section class="row justify-content-center">
+  <div class="chatroom col-12 p-3 m-2">
+    <div class="py-2 px-5 chatbox">
+      This is the chatrooom
+      {{> chat}}
+    </div>
+  </div>
+  <div class="col-12">
+    <section class="row justify-content-center">
+      {{log this.posts}}
+      {{#each response as |release|}}
+      <div class="news-card">
+
+        {{> game-releases release}}
+      </div>
+      {{/each}}
+    </section>
+  </div>
+</section>

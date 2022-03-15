@@ -1,33 +1,56 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
+<!-- About section -->
+<section class="row justify-content-center">
+  <div class="col-6 mt-5 p-3 landingAbout">
+    <img class="pb-2" src="./images/fivestar.svg">
+    <span class="aboutText">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque. Vitae tempus quam
+        pellentesque nec nam aliquam sem et tortor. Proin fermentum leo vel orci. Ultrices in iaculis
+        nunc sed augue lacus viverra vitae. Sit amet porttitor eget dolor morbi non arcu risus quis.
+        Auctor elit sed vulputate mi sit. Quis auctor elit sed vulputate. Consectetur adipiscing elit
+        pellentesque habitant morbi tristique.</p>
+    </span>
   </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
+</section>
+<!-- Login/Signup -->
+<section class="row justify-content-center p-4 rounded mt-3 formContainer">
+  <div class="col-12 col-md-6 p-4 signupDiv">
+    <h5 class="text-center pb-2">Signup and find your squad today!</h5>
+    <form class="signupForm" id="signup-form">
+      <div class="mb-2">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control form-control-sm" id="username-signup" placeholder="Username">
+      </div>
+      <div class="mb-2">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control form-control-sm" id="email-signup" placeholder="user@email.com">
+      </div>
+      <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control form-control-sm" id="password-signup" placeholder="Password">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark">Signup</button>
+      </div>
+    </form>
   </div>
-  <div>
-    <button type="submit">login</button>
+  <div class="col-12 col-md-6 p-4 loginDiv">
+    <h5 class="text-center pb-2">Sign in to join your squad!</h5>
+    <form class="sign-inForm pt-3" id="login-form">
+      <div class="mb-2 mb-md-4">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control form-control-sm" id="email-login" placeholder="user@email.com">
+      </div>
+      <div class="mb-2 mb-md-5">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control form-control-sm" id="password-login" placeholder="Password">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark">Login</button>
+      </div>
+    </form>
   </div>
-</form>
-
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
-
+</section>
 <script src="/javascript/login.js"></script>
+
+

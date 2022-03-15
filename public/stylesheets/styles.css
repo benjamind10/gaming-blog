@@ -22,8 +22,11 @@ body {
 }
 
 .landingMain {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 2.5rem;
 }
 
 .header {
@@ -73,16 +76,124 @@ body {
 }
 
 .landingFooter {
+    display: flex;
     height: 100px;
     max-width: 900px;
-    margin: auto;
     background-color: var(--info-box-color);
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: var(--info-text-color);
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--info-text-color);
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: var(--info-box-color);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--info-text-color);
+}
+
+/* HOMEPAGE styling */
+
+.home-news {
+    min-height: 200px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.news-card img {
+    max-width: 50%;
+}
+
+.news-card div {
+    max-width: 200px;
+    font-size: 12px;
+    color: #eee;
+    background-color: var(--info-box-color);
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.news-card div::-webkit-scrollbar {
+    display: none;
+}
+
+.news-card li {
+    background-color: var(--info-box-color);
+}
+
+.home-leaderboard {
+    min-height: 200px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.chatroom {
+    min-height: 100%;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.chatbox {
+    background-color: #474545ce;
+}
+
+/* USER DASHBOARD Styles */
+.user-info {
+    min-height: 150px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.user-posts {
+    min-height: 400px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+/* FORUM PAGE Styles */
+.forum-div {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+}
+
+.dashboard-tab {
+    min-height: 800px;
+    background-color: var(--info-box-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #eee;
+    text-align: center;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.forum-tab {
+    background-color: var(--info-box-color);
 }
 
 
+/* Media Queries */
 
-
-
+@media screen and (max-width: 575px)  {
+    .logoLanding img {
+        width: 75%;
+    }
+}

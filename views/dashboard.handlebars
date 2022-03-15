@@ -1,20 +1,19 @@
+<!-- Stars section -->
+        <section class="row justify-content-center">
+            <div class="col-6 mt-5 p-3">
+                <img src="/images/fivestar.svg">
+            </div>
+        </section>
+<!-- User Dashboard -->
 <section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+  <!-- Section for your user information -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-md-10 user-info">
+      <h3 class="text-center">{{username}}'s Dashboard</h3>
     </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+  </div>
 </section>
 
-{{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
   <ol>

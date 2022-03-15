@@ -141,13 +141,20 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/chat', withAuth, (req, res) => {
-  console.log(req.session.username);
-
   const userObj = {
     id: req.session.user_id,
     username: req.session.username,
   };
   res.render('chat', { userObj });
+});
+
+router.get('/forum', withAuth, (req, res) => {
+  const userObj = {
+    id: req.session.user_id,
+    username: req.session.username,
+  };
+
+  res.render('forum', { userObj });
 });
 
 module.exports = router;

@@ -76,6 +76,7 @@ body {
 }
 
 .landingFooter {
+    display: flex;
     height: 100px;
     max-width: 900px;
     background-color: var(--info-box-color);
@@ -83,6 +84,22 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: var(--info-text-color);
     bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--info-text-color);
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: var(--info-box-color);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--info-text-color);
 }
 
 /* HOMEPAGE styling */

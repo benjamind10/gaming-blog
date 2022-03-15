@@ -6,7 +6,7 @@ const axios = require('axios');
 const { response } = require('express');
 
 // get all posts for homepage
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   const releases = [];
   console.log('======================');
   Post.findAll({
@@ -51,12 +51,16 @@ router.get('/', (req, res) => {
           `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10&filter=release_date:2022-01-01|2022-02-02`
         )
         .then(response => {
-          releases.push(response.data);
+          console.log(response);
+          let tmp = response.data.results.filter(e => {
+            console.log(e.description);
+            return e.description !== '';
+          });
 
           // console.log('Response', response.data);
           res.render('homepage', {
             posts,
-            releases,
+            response: tmp,
             loggedIn: req.session.loggedIn,
           });
         });

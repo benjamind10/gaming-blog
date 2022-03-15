@@ -52,10 +52,13 @@ router.get('/', withAuth, (req, res) => {
         )
         .then(response => {
           console.log(response);
-          let tmp = response.data.results.filter(e => {
-            console.log(e.description);
-            return e.description !== '';
-          });
+          let tmp = response.data.results
+            .filter(e => {
+              return e.description !== '';
+            })
+            .filter(e => {
+              return e.image !== null;
+            });
 
           // console.log('Response', response.data);
           res.render('homepage', {

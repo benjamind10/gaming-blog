@@ -91,7 +91,7 @@ body {
 
 .landingFooter {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100px;
   max-width: 900px;
   background-color: var(--info-box-color);
@@ -100,21 +100,40 @@ body {
   color: var(--info-text-color);
   bottom: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-map {
+  font-size: .75em;
+  padding: .3em;
 }
 
 footer a {
   text-decoration: none;
   color: var(--info-text-color);
   font-size: 1.25em;
-  padding: 1em;
 }
 
 footer a:hover {
   text-decoration: none;
   color: var(--info-box-color);
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 5px 5px 5px 5px;
   background-color: var(--info-text-color);
+}
+
+#about {
+  padding: 1em;
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+}
+
+#copyright {
+  justify-content: center;
 }
 
 /* HOMEPAGE styling */

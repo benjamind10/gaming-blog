@@ -91,6 +91,7 @@ body {
 
 .landingFooter {
   display: flex;
+  flex-direction: column;
   height: 100px;
   max-width: 900px;
   background-color: var(--info-box-color);
@@ -98,14 +99,14 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: var(--info-text-color);
   bottom: 0;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 footer a {
   text-decoration: none;
   color: var(--info-text-color);
-  font-size: 1.5em;
+  font-size: 1.25em;
   padding: 1em;
 }
 

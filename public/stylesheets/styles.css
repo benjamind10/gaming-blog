@@ -33,6 +33,20 @@ body {
     height: 75px;
 }
 
+.header-text a{
+    text-decoration: none;
+    color: var(--info-text-color);
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.header-text a:hover{
+    text-decoration: none;
+    color: var(--info-box-color);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--info-text-color);
+}
+
 .landingAbout {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: var(--info-text-color);
@@ -140,14 +154,30 @@ footer a:hover{
 }
 
 .chatroom {
-    min-height: 100%;
+    max-height: 500px;
     background-color: var(--info-box-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #eee;
+    overflow-y: scroll;
 }
 
 .chatbox {
     background-color: #474545ce;
+    max-height: 80%;
+    overflow: scroll;
+}
+
+.chatbox::-webkit-scrollbar {
+    display: none;
+}
+
+.chatbox li {
+    background-color: #999999de;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    
 }
 
 /* USER DASHBOARD Styles */

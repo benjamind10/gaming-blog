@@ -1,10 +1,11 @@
 <article class='post'>
-  <div class='title'>
-    <h4>{{title}}</h4>
-    <p class="text-light">{{post_url}}</p>
-
+<div class="card">
+  <div class="card-header text-dark">
+    {{title}}
   </div>
-  <div class='meta'>
+  <div class="card-body">
+    <h5 class="card-title text-dark">{{post_url}}</h5>
+  <div class='meta text-dark'>
     {{vote_count}}
     {{format_plural 'point' vote_count}}
     by
@@ -15,4 +16,8 @@
     <a href='/post/{{id}}'>{{comments.length}}
       {{format_plural 'comment' comments.length}}</a>
   </div>
+  </div>
+</div>
 </article>
+
+

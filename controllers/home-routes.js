@@ -70,6 +70,7 @@ router.get('/', withAuth, (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(500).json;
+      window.location('/');
     }
   });
 });
@@ -152,6 +153,10 @@ router.get('/chat', withAuth, (req, res) => {
     userObj,
     loggedIn: req.session.loggedIn,
   });
+});
+
+router.get('/about-us', (req, res) => {
+  res.render('about-us');
 });
 
 router.get('/forum', withAuth, (req, res) => {

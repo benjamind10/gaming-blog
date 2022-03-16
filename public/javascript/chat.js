@@ -47,7 +47,7 @@ chat_db.orderByChild('event').on('child_added', function (snapshot) {
   // Show delete button if message is sent by me
   if (snapshot.val().sender == user_name) {
     html +=
-      "<button class='btn btn-danger btn-sm align-middle mb-1 mr-2' data-id='" +
+      "<button id='my-msg' class='btn btn-danger btn-sm align-middle mb-1 mr-2' data-id='" +
       snapshot.key +
       "' onclick='deleteMessage(this);'>";
     html += 'Delete';

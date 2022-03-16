@@ -13,17 +13,19 @@
   </head>
 
 <body>
-    <div class="container landingMain justify-content-center">
+    <div class="container landingMain">
         <!--Header/logo section-->
         <section class="row justify-content-center rounded-bottom header bg-dark bg-gradient mb-md-5">
+            <div class="header-text mt-2">
+                <a href="/">Home</a>
+                <a href="/dashboard">Dashboard</a>    
+            </div>
             <div class="col-8 col-md-4 logoLanding">
                 <img src="./images/logo2.png">
-                <button type="button" id="logout">Logout</button>
-                <div>
-                    <a href="/">Home</a>
-                    <a href="/dashboard">Dashboard</a>
-                    <a href="/forum">Forum</a>
-                </div>
+            </div>
+            <div class="header-text mt-2">
+                <a href="/forum">Forum</a>
+                <button id="logout" class="btn btn-dark">Logout</button>
             </div>
         </section>
 

@@ -33,6 +33,20 @@ body {
     height: 75px;
 }
 
+.header-text a{
+    text-decoration: none;
+    color: var(--info-text-color);
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.header-text a:hover{
+    text-decoration: none;
+    color: var(--info-box-color);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--info-text-color);
+}
+
 .landingAbout {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: var(--info-text-color);

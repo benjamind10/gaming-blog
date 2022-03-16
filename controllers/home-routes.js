@@ -153,6 +153,10 @@ router.get('/chat', withAuth, (req, res) => {
   });
 });
 
+router.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
 router.get('/forum', withAuth, (req, res) => {
   const userObj = {
     id: req.session.user_id,

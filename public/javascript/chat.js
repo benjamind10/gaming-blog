@@ -38,10 +38,16 @@ function sendMessage() {
 chat_db.orderByChild('event').on('child_added', function (snapshot) {
   let html = '';
   html += "<li id='message" + snapshot.key + "'>";
+
+  // Select chat style based on user
+  if (snapshot.val().sender == user_name) { 
+    html += "<span class='alternate'>";
+  } else html += "<span class='chat-message'>";
+
   // Show delete button if message is sent by me
   if (snapshot.val().sender == user_name) {
     html +=
-      "<button data-id='" +
+      "<button class='btn btn-danger btn-sm align-middle mb-1 mr-2' data-id='" +
       snapshot.key +
       "' onclick='deleteMessage(this);'>";
     html += 'Delete';
@@ -49,6 +55,7 @@ chat_db.orderByChild('event').on('child_added', function (snapshot) {
   }
 
   html += snapshot.val().sender + ': ' + snapshot.val().message;
+  html += '</span>'
   html += '</li>';
 
   $('#messages').append(html);

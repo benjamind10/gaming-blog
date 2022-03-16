@@ -162,9 +162,10 @@ footer a:hover{
 }
 
 .chatbox {
-    background-color: #474545ce;
+    background-color: #303030a2;
     max-height: 80%;
     overflow: scroll;
+    border-radius: 7px;
 }
 
 .chatbox::-webkit-scrollbar {
@@ -172,13 +173,24 @@ footer a:hover{
 }
 
 .chatbox li {
-    background-color: #999999de;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    
+    margin: 20px; 
 }
+
+.chat-message {
+    background-color: #42baffab;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.alternate {
+    background-color: hsla(167, 100%, 66%, 0.671) !important;
+    border-radius: 5px;
+    padding: 10px
+}
+
+/* .chat-box:nth-child() .chat-message {
+    background-color: hsla(167, 100%, 66%, 0.671);
+  } */
 
 /* USER DASHBOARD Styles */
 .user-info {

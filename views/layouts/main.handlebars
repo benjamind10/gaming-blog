@@ -28,7 +28,11 @@
             </div>
             <div class="header-text mt-2">
                 <a href="/forum">Forum</a>
+                {{#if loggedIn}}
                 <a href="" id="logout">Logout</a>
+                {{else}}
+                <a href="/login">Login</a>
+                {{/if}}
             </div>
         </section>
 
@@ -39,11 +43,9 @@
         
     </div>
     <footer class="row mt-4 justify-content-center">
-        <div class="landingFooter container">
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/forum">Forum</a>
-            <a href="/login">Login/Logout</a>
+        <div class="landingFooter container column">
+            <a href="/about">About Our Team</a>
+            <p>&copy; 2022</p>
         </div>
     </footer>
     

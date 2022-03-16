@@ -48,7 +48,7 @@ router.get('/', withAuth, (req, res) => {
     try {
       const fetch = axios
         .get(
-          `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10&filter=release_date:2022-01-01|2022-02-02`
+          `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10`
         )
         .then(response => {
           let tmp = response.data.results

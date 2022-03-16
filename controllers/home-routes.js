@@ -1,9 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment, Vote } = require('../models');
+const withAuth = require('../utils/auth');
+const axios = require('axios');
+const { response } = require('express');
 
 // get all posts for homepage
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
+  const releases = [];
   console.log('======================');
   Post.findAll({
     attributes: [
@@ -11,68 +15,108 @@ router.get('/', (req, res) => {
       'post_url',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      [
+        sequelize.literal(
+          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
+        ),
+        'vote_count',
+      ],
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at',
+        ],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+        attributes: ['username'],
+      },
+    ],
+  }).then(dbPostData => {
+    const posts = dbPostData.map(post => post.get({ plain: true }));
 
-      res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    try {
+      const fetch = axios
+        .get(
+          `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10&filter=release_date:2022-01-01|2022-02-02`
+        )
+        .then(response => {
+          let tmp = response.data.results
+            .filter(e => {
+              return e.description !== '';
+            })
+            .filter(e => {
+              return e.image !== null;
+            });
+
+          // console.log('Response', response.data);
+          res.render('homepage', {
+            posts,
+            response: tmp,
+            loggedIn: req.session.loggedIn,
+          });
+        });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json;
+    }
+  });
 });
 
 // get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     attributes: [
       'id',
       'post_url',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      [
+        sequelize.literal(
+          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
+        ),
+        'vote_count',
+      ],
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at',
+        ],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ['username'],
+      },
+    ],
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res
+          .status(404)
+          .json({ message: 'No post found with this id' });
         return;
       }
 
@@ -80,7 +124,7 @@ router.get('/post/:id', (req, res) => {
 
       res.render('single-post', {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
       });
     })
     .catch(err => {
@@ -96,6 +140,75 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/chat', withAuth, (req, res) => {
+  const userObj = {
+    id: req.session.user_id,
+    username: req.session.username,
+  };
+  res.render('chat', {
+    userObj,
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
+router.get('/forum', withAuth, (req, res) => {
+  const userObj = {
+    id: req.session.user_id,
+    username: req.session.username,
+  };
+
+  Post.findAll({
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at',
+      [
+        sequelize.literal(
+          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
+        ),
+        'vote_count',
+      ],
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at',
+        ],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+
+      res.render('forum', {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

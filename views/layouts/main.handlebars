@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width, initial-scale=1.0'
+    />
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/387231/connect.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
+    <title>CoD Connect</title>
+  </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Just Tech News</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
+    <nav>
+        
+    </nav>
+    <div id="fixedElement" class="container landingMain">
+        <!--Header/logo section-->
+        <section class="row justify-content-center rounded-bottom header bg-dark bg-gradient mb-md-5">
+            <div class="header-text mt-2">
+                <a href="/">Home</a>
+                <a href="/dashboard">Dashboard</a>    
+            </div>
+            <div class="col-8 col-md-4 logoLanding">
+                <img src="./images/logo2.png">
+            </div>
+            <div class="header-text mt-2">
+                <a href="/forum">Forum</a>
+                {{#if loggedIn}}
+                <a href="" id="logout">Logout</a>
+                {{else}}
+                <a href="/login">Login</a>
+                {{/if}}
+            </div>
+        </section>
+
+        <main>
+            {{{body}}}
+        </main>
+        
+        
+    </div>
+    <footer class="row mt-4 justify-content-center">
+        <div class="landingFooter container column">
+            <a href="/about" id="about">About Our Team <br> &copy; 2022</a>
+            <div class="flex-column">
+                <div class="flex-column site-map">
+                    <a href="https://github.com/benjamind10" target="_blank">Ben Duran</a>
+                    <a href="https://github.com/natejboucher" target="_blank">Nate Boucher</a>
+                    <a href="https://github.com/Villdevitchoff" target="_blank">Victor Lindbloom</a>
+                    <a href="https://github.com/WBrooks28" target="_blank">Will Brooks</a>
+                </div>
+            </div>
+            <div class="flex-column site-map">
+                <a href="/home">Home</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/forum">Forum</a>
+                <a href="/login">Login/Logout</a>
+            </div>
+            
+        </div>
     </footer>
-  </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+    
+    <script src="/javascript/logout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -245,6 +245,14 @@ ul {
   background-color: var(--info-box-color);
 }
 
+.flex-test {
+  display: flex;
+}
+
+.card {
+  text-align: center;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 575px) {

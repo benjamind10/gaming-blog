@@ -51,7 +51,6 @@ router.get('/', withAuth, (req, res) => {
           `http://www.gamespot.com/api/games/?api_key=${process.env.GAMESPOT_API}&format=json&limit=10&filter=release_date:2022-01-01|2022-02-02`
         )
         .then(response => {
-          console.log(response);
           let tmp = response.data.results
             .filter(e => {
               return e.description !== '';
@@ -144,8 +143,14 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/chat', withAuth, (req, res) => {
-  const username = req.session.username;
-  res.render('chat', username);
+  const userObj = {
+    id: req.session.user_id,
+    username: req.session.username,
+  };
+  res.render('chat', {
+    userObj,
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 router.get('/forum', withAuth, (req, res) => {

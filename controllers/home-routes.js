@@ -144,11 +144,8 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/chat', withAuth, (req, res) => {
-  const userObj = {
-    id: req.session.user_id,
-    username: req.session.username,
-  };
-  res.render('chat', { userObj });
+  const username = req.session.username;
+  res.render('chat', username);
 });
 
 router.get('/forum', withAuth, (req, res) => {

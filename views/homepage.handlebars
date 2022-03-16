@@ -14,9 +14,10 @@
   </div>
   <div class="col-12">
     <section class="row justify-content-center">
-      {{#each releases.[0].results as |release|}}
+      {{log this.posts}}
+      {{#each response as |release|}}
       <div class="news-card">
-        {{log release}}
+
         {{> game-releases release}}
       </div>
       {{/each}}

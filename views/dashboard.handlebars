@@ -9,9 +9,7 @@
   <!-- Section for your user information -->
   <div class="row justify-content-center mt-4">
     <div class="col-12 col-md-10 user-info">
-      <h3 class="text-center">(username)'s Dashboard</h3>
-      <br />Name for site
-      <br />Game username
+      <h3 class="text-center">{{username}}'s Dashboard</h3>
     </div>
   </div>
 </section>
@@ -56,10 +54,10 @@
         <section class="col-12">
           <h2>Your Casual Posts</h2>
           <ol>
-            {{#each casual-posts as |casual-post|}}
+            {{#each posts as |post|}}
             <li>
-              {{> post-info casual-post}}
-              <a href="/dashboard/edit/{{casual-post.id}}" class="edit-link">Edit post</a>
+              {{> post-info post}}
+              <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
             </li>
             {{/each}}
           </ol>

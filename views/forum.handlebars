@@ -22,6 +22,7 @@
             <!-- Div for Casual Posts -->
             <div class="tab-pane fade show active forum-div" id="casual" role="tabpanel" aria-labelledby="casual-tab">
                 <ol class="post-list">
+               
                     {{#each posts as |post|}}
                     <li>
                         {{> post-info post }}
@@ -32,11 +33,11 @@
             <!-- Div for competitive posts -->
             <div class="tab-pane fade forum-div" id="comp" role="tabpanel" aria-labelledby="comp-tab">
                 <ol class="post-list">
-                    {{#each comp-posts as |post|}}
+                    {{!-- {{#each comp-posts as |post|}}
                     <li>
                         {{> comp-post-info comp-post }}
                     </li>
-                    {{/each}}
+                    {{/each}} --}}
                 </ol>
             </div>
         </div>

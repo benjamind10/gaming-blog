@@ -109,8 +109,8 @@ body {
 }
 
 .site-map {
-  font-size: .75em;
-  padding: .3em;
+  font-size: 0.75em;
+  padding: 0.3em;
 }
 
 footer a {
@@ -179,7 +179,6 @@ footer a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
   overflow-y: scroll;
-  max-width: 75%;
 }
 
 #chat-form {

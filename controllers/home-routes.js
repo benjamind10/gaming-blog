@@ -63,6 +63,7 @@ router.get('/', withAuth, (req, res) => {
           res.render('homepage', {
             posts,
             response: tmp,
+            username: req.session.username,
             loggedIn: req.session.loggedIn,
           });
         });
@@ -151,10 +152,6 @@ router.get('/chat', withAuth, (req, res) => {
     userObj,
     loggedIn: req.session.loggedIn,
   });
-});
-
-router.get('/about-us', (req, res) => {
-  res.render('about-us');
 });
 
 router.get('/forum', withAuth, (req, res) => {

@@ -75,3 +75,9 @@ chat_db.on('child_removed', function (snapshot) {
   document.getElementById('message' + snapshot.key).innerHTML =
     'This message has been removed';
 });
+
+window.addEventListener('load', e => {
+  var element = document.getElementById('chatboxEl');
+
+  element.scrollTop = element.scrollHeight;
+});

@@ -179,6 +179,7 @@ footer a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
   overflow-y: scroll;
+  display: inline-block;
 }
 
 #chat-form {
@@ -210,9 +211,11 @@ footer a:hover {
   background-color: hsla(167, 100%, 66%, 0.671) !important;
   border-radius: 5px;
   padding: 10px;
+  margin-left: 55%;
 }
 
-ul {
+ul,
+ol {
   list-style-type: none;
 }
 

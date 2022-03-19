@@ -191,6 +191,8 @@ footer a:hover {
   max-height: 80%;
   overflow: scroll;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .chatbox::-webkit-scrollbar {
@@ -199,6 +201,7 @@ footer a:hover {
 
 .chatbox li {
   margin: 20px;
+  display: flex;
 }
 
 .chat-message {
@@ -211,7 +214,6 @@ footer a:hover {
   background-color: hsla(167, 100%, 66%, 0.671) !important;
   border-radius: 5px;
   padding: 10px;
-  margin-left: 55%;
 }
 
 ul,
@@ -281,6 +283,11 @@ ol {
 
 .nav-item {
   font-size: 150%;
+}
+
+.li-alternate {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Media Queries */

@@ -290,6 +290,10 @@ ol {
   justify-content: flex-end;
 }
 
+#card-center {
+  margin-left: 5em;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 575px) {

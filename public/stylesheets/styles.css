@@ -274,6 +274,15 @@ ol {
   text-align: center;
 }
 
+#logo {
+  padding-top: 5%;
+  position: absolute;
+}
+
+.nav-item {
+  font-size: 150%;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 575px) {

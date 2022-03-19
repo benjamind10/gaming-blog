@@ -43,9 +43,9 @@ chat_db.orderByChild('event').on('child_added', function (snapshot) {
   }>`;
 
   // Select chat style based on user
-  if (isCurrentUser) {
-    html += "<span class='alternate'>";
-  } else html += "<span class='chat-message'>";
+  isCurrentUser
+    ? (html += "<span class='alternate'>")
+    : (html += "<span class='chat-message'>");
 
   // Show delete button if message is sent by me
   if (isCurrentUser) {

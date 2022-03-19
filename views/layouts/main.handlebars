@@ -21,51 +21,30 @@
   </head>
 
   <body>
-    <nav
-      class='navbar sticky-top navbar-expand-lg navbar-dark bg-dark'
-    >
-      <a id='logo' class='navbar-brand' href='/'>
-        <img src='/images/logo2.png' alt='...' height='156' />
-      </a>
-      <button
-        class='navbar-toggler'
-        type='button'
-        data-toggle='collapse'
-        data-target='#navbarNav'
-        aria-controls='navbarNav'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-      >
-        <span class='navbar-toggler-icon'></span>
-      </button>
-      <div
-        class='collapse navbar-collapse justify-content-center'
-        id='navbarNav'
-      >
+    <nav>
 
-        <ul class='navbar-nav'>
-          <li class='nav-item active'>
-            <a class='nav-link' href='/'>Home
-              <span class='sr-only'>(current)</span></a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='/dashboard'>Dashboard</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='/forum'>Forum</a>
-          </li>
-          <li class='nav-item'>
-            {{#if loggedIn}}
-              <a class='nav-link' href='' id='logout'>Logout</a>
-            {{else}}
-              <a class='nav-link' href='/login'>Login</a>
-            {{/if}}
-          </li>
-        </ul>
-      </div>
     </nav>
-
     <div id='fixedElement' class='container landingMain'>
+      <!--Header/logo section-->
+      <section
+        class='row justify-content-center rounded-bottom header bg-dark bg-gradient mb-md-5'
+      >
+        <div class='header-text mt-2'>
+          <a href='/'>Home</a>
+          <a href='/dashboard'>Dashboard</a>
+        </div>
+        <div class='col-8 col-md-4 logoLanding'>
+          <img src='/images/logo2.png' />
+        </div>
+        <div class='header-text mt-2'>
+          <a href='/forum'>Forum</a>
+          {{#if loggedIn}}
+            <a href='' id='logout'>Logout</a>
+          {{else}}
+            <a href='/login'>Login</a>
+          {{/if}}
+        </div>
+      </section>
 
       <main>
         {{{body}}}

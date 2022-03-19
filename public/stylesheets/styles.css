@@ -71,6 +71,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
+
+
 .signupDiv {
   min-height: 350px;
   border-right: 1px solid rgba(20, 20, 20, 0.644);
@@ -79,6 +81,7 @@ body {
 .loginDiv {
   min-height: 320px;
   border-left: 1px solid rgba(20, 20, 20, 0.644);
+  max-width: 900px;
 }
 
 .logoLanding {
@@ -86,7 +89,15 @@ body {
 }
 
 .logoLanding img {
-  width: 80%;
+  max-width: 100px;
+}
+
+.navbar {
+  max-width: 950px;
+}
+
+.navbar li {
+  padding: 10px;
 }
 
 .landingFooter {
@@ -225,13 +236,15 @@ ol {
 
 /* USER DASHBOARD Styles */
 .user-info {
-  min-height: 150px;
+  min-height: 75px;
+  max-width: 700px;
   background-color: var(--info-box-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
 }
 
 .user-posts {
+  max-width: 900px;
   min-height: 400px;
   background-color: var(--info-box-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -245,6 +258,7 @@ ol {
 /* FORUM PAGE Styles */
 .forum-div {
   min-height: 800px;
+  max-width: 900px;
   background-color: var(--info-box-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;

@@ -36,16 +36,19 @@ function sendMessage() {
 // Listen for incoming messages
 
 chat_db.orderByChild('event').on('child_added', function (snapshot) {
-  let html = '';
-  html += "<li id='message" + snapshot.key + "'>";
+  const isCurrentUser = snapshot.val().sender == user_name;
+
+  let html = `<li id='message'  ${snapshot.key} ${
+    isCurrentUser ? 'class="li-alternate" ' : ''
+  }>`;
 
   // Select chat style based on user
-  if (snapshot.val().sender == user_name) {
-    html += "<span class='alternate'>";
-  } else html += "<span class='chat-message'>";
+  isCurrentUser
+    ? (html += "<span class='alternate'>")
+    : (html += "<span class='chat-message'>");
 
   // Show delete button if message is sent by me
-  if (snapshot.val().sender == user_name) {
+  if (isCurrentUser) {
     html +=
       "<button id='my-msg' class='btn btn-danger btn-sm align-middle mb-1 mr-2' data-id='" +
       snapshot.key +

@@ -21,12 +21,10 @@
   </head>
 
   <body>
-    <nav>
 
-    </nav>
     <div id='fixedElement' class='container landingMain'>
       <!--Header/logo section-->
-      <section
+      <nav
         class='row justify-content-center rounded-bottom header bg-dark bg-gradient mb-md-5'
       >
         <div class='header-text mt-2'>
@@ -34,7 +32,7 @@
           <a href='/dashboard'>Dashboard</a>
         </div>
         <div class='col-8 col-md-4 logoLanding'>
-          <img src='./images/logo2.png' />
+          <img src='/images/logo2.png' alt='logo' />
         </div>
         <div class='header-text mt-2'>
           <a href='/forum'>Forum</a>
@@ -44,7 +42,7 @@
             <a href='/login'>Login</a>
           {{/if}}
         </div>
-      </section>
+      </nav>
 
       <main>
         {{{body}}}

@@ -227,7 +227,7 @@ ol {
 
 /* USER DASHBOARD Styles */
 .user-info {
-  min-height: 150px;
+  min-height: 100px;
   background-color: var(--info-box-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
@@ -235,18 +235,6 @@ ol {
 
 .user-posts {
   min-height: 400px;
-  background-color: var(--info-box-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: #eee;
-}
-
-.post-list {
-  text-align: center;
-}
-
-/* FORUM PAGE Styles */
-.forum-div {
-  min-height: 800px;
   background-color: var(--info-box-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
@@ -260,7 +248,21 @@ ol {
   text-align: center;
 }
 
-.tab-content {
+.post-list {
+  text-align: center;
+}
+
+/* FORUM PAGE Styles */
+.forum-div {
+  padding: 20px;
+  min-height: 800px;
+  background-color: var(--info-box-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #eee;
+}
+
+
+.post-container {
   width: 100%;
 }
 

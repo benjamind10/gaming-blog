@@ -3,9 +3,11 @@
   <h2>
     Edit Post
   </h2>
-  <form class="edit-post-form">
+  <div class="form-group">
+
+  <form class="form-control comment-form edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <input name="form-control post-title" type="text" value="{{post.title}}" />
       <span>({{format_url post.post_url}})</span>
     </div>
     <div>
@@ -13,18 +15,21 @@
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button class="btn btn-success" type="submit">Save post</button>
+    <button class="btn btn-danger" type="button" class="delete-post-btn">Delete post</button>
   </form>
+  </div>
 </article>
-
+<br>
+<br>
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="form-control" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <br>
+    <button class="btn btn-success" type="submit">add comment</button>
   </div>
 </form>
 

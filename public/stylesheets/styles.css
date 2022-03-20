@@ -252,6 +252,12 @@ ol {
   text-align: center;
 }
 
+/* EDIT POST styles */
+#edit-input {
+  width: 100%;
+  border: none;
+}
+
 /* FORUM PAGE Styles */
 .forum-div {
   padding: 20px;
@@ -260,7 +266,6 @@ ol {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
 }
-
 
 .post-container {
   width: 100%;

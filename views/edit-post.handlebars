@@ -1,28 +1,35 @@
-<article>
+<div class="container user-posts p-3">
   <a href="/dashboard"> &larr; Back to dashboard</a>
+<article class="row justify-content-around">
   <h2>
     Edit Post
   </h2>
-  <div class="form-group">
+  <div class="col-12 form-group">
 
   <form class="form-control comment-form edit-post-form">
     <div>
-      <input name="form-control post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input name="form-control post-title" id="edit-input" type="text" value="{{post.title}}" />
     </div>
-    <div>
+    <br>
+      <span class="text-light">{{post.post_url}}</span>
+    <div class="col-12 mt-2 text-secondary">
       {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
+    <div class="col-12"?>
     <button class="btn btn-success" type="submit">Save post</button>
     <button class="btn btn-danger" type="button" class="delete-post-btn">Delete post</button>
+    </div>
   </form>
   </div>
 </article>
 <br>
 <br>
-<form class="comment-form">
+<br>
+<br>
+<div class="mt-4">
+<form class="comment-form ">
   <div>
     <textarea class="form-control" name="comment-body"></textarea>
   </div>
@@ -32,8 +39,10 @@
     <button class="btn btn-success" type="submit">add comment</button>
   </div>
 </form>
+</div>
 
 {{> comments post.comments}}
+</div>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
